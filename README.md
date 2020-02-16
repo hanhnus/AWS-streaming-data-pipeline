@@ -6,7 +6,7 @@
 [![standard-readme compliant](https://img.shields.io/badge/AWS-Glue-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 [![standard-readme compliant](https://img.shields.io/badge/AWS-Athena-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-### NLTK-based sentiment analysis
+### 图
 
 ## Table of Contents
 
@@ -25,11 +25,7 @@
 
 ## Background
 
-Sentiment analysis is a method for gauging the attitude of notifications from customers in communication with an end user or a group of end users. Based on a scoring mechanism, sentiment analysis monitors the wording and evaluates language to quantify attitudes, opinions, and emotions related to a business, product or service, or topic. 
-
-A relative sentiment analysis score provides insight into the effectiveness of cards and also serves as a useful measurement to gauge the overall opinion on customers' services. When sentiment analysis scores are compared across certain cards, customers can identify the areas for improvement in the delivery of message. 
-
-By monitoring attitudes and opinions about cards continuously, customers are also able to detect subtle shifts in opinions and adapt readily to meet the changing needs of their end users.
+The streaming data pipeline building in this repo is to simulate Atomic app sending cards/events data to AWS API. A sample data set ([Crime Records in Sacramento](http://samplecsvs.s3.amazonaws.com/SacramentocrimeJanuary2006.csv)) in CSV format is selected in this demo due to its variety of data types in different columns, including datetime, string, int, double and struct.
 
 ## Feature
 
@@ -43,31 +39,13 @@ By monitoring attitudes and opinions about cards continuously, customers are als
 - Healthcheck
 - AWS Deployment
 
-## Installation
+## Pipeline
 
-### Deploy Sentiment Analysis Server in Docker
+### Send data to AWS Kinesis using Python
 
-#### Step 1: Build Docker image from Dockefile
-Download https://github.com/atomic-app/sentiment-docker/blob/master/Dockerfile and other project files to ~/Documents/Dockerfiles/sentiment_analysis/
-```
-docker build -t sentiment_analysis_image:v1.0 ~/Documents/Dockerfiles/sentiment_analysis/
-```
-After building, images can be checked by
-```
-docker image ls
-```
-
-#### Step 2: Create & Run a Docker container from Docker image
-```
-docker run --name sentiment_analysis_container -p 99 -dit sentiment_analysis_image:v1.0
-```
-The port needs to be aligned with the one in https://github.com/atomic-app/sentiment-docker/blob/master/app.py.
-
-#### Step 3: Attach the container and run services
-```
-docker attach sentiment_analysis_container
-```
-After attaching the Docker container, Nginx service and app will run automatically.
+A python script (链接) is built to 
+1. Read raw data from CSV file into DataFrame
+2. Send certain amount of data items to Kinesis Data Stream by making API call
 
 
 ## Usage
