@@ -46,7 +46,7 @@ The streaming data pipeline building in this repo is to simulate Atomic app send
 A Python script (链接) is built to 
 1. Read raw data from CSV file into DataFrame
 2. Encode the data items from String to bytes
-3. Encapsulate the encoded bytes together with the corresponding partition key in a JSON list (after reading certain amount of data items)
+3. Encapsulate the encoded bytes together with the corresponding partition keys in a JSON list (after reading certain amount of data items, eg. every 50 rows)
 4. Send the JSON lists to Kinesis Data Stream by making API call periodically
 
 
