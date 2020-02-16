@@ -1,4 +1,4 @@
-# Streaming Data Pipeline AWS Deployment
+# Streaming Data Pipeline - AWS Deployment
 
 [![standard-readme compliant](https://img.shields.io/badge/AWS-Kinesis-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 [![standard-readme compliant](https://img.shields.io/badge/AWS-Lambda-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
