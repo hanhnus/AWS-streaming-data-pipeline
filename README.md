@@ -6,7 +6,6 @@
 [![standard-readme compliant](https://img.shields.io/badge/AWS-Glue-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 [![standard-readme compliant](https://img.shields.io/badge/AWS-Athena-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-
 ## Architecture
 <img src="https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/image/AWS_Architecture.png"/>
 
