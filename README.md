@@ -28,18 +28,6 @@
 
 The streaming data pipeline in this repo is to simulate Atomic app sending cards/events data to Kinesis Data Stream by making API call and the following data processing and query in AWS. A sample data set ([Crime Records in Sacramento](http://samplecsvs.s3.amazonaws.com/SacramentocrimeJanuary2006.csv)) in CSV format is selected in this demo due to its variety of data types in different columns, including datetime, string, int, double and struct. In a later stage, the cards/events real-time streaming data can be send to Kinesis Data Stream, which will replace the "local PC" part in above diagram.
 
-## Feature
-
-- User Interface in Browser (Flask Framework)
-- JSON Interaction through Terminal (cURL)
-- Requests Error Handling
-- Unit Testing (Pytest)
-- API Testing (Swagger UI)
-- Logging
-- Docker Deployment
-- Healthcheck
-- AWS Deployment
-
 ## Pipeline
 
 ### Send data to AWS Kinesis using Python
