@@ -26,7 +26,7 @@ The streaming data pipeline in this repo is to simulate Atomic app sending cards
 ## Pipeline
 
 ### Send data to AWS Kinesis using Python
-<img src="https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/image/AWS_Kinesis_Data_Stream.png"  width="300"/>
+<img src="https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/image/AWS_Kinesis_Data_Stream.png"  width="250"/>
 
 A [Python script](https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/stream_data_to_Kinesis.py) is built to 
 1. Read raw data from CSV file into DataFrame
@@ -48,7 +48,7 @@ Since the data items are encoded from String to bytes in Python script, the payl
 https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/payload_decoding.js
 
 ### AWS Glue
-<img src="https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/image/AWS_Glue_Athena.png" width="300"/>
+<img src="https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/image/AWS_Glue_Athena.png" width="250"/>
 
 An AWS Glue ETL job is set up to keep the schema of the source data and create a new dataset in Parquet format:
 * **Data Source:**  JSON format data in S3 bucket
