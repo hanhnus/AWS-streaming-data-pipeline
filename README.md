@@ -16,6 +16,8 @@
 	- [Send data to AWS Kinesis Data Stream](#Send-data-to-AWS-Kinesis-using-Python)
 	- [AWS Kinesis Delivery Stream](#Delivery-data-from-Data-Stream-to-S3-bucket-through-Delivery-Stream-with-Lambda-data-transformation)
 	- [Lambda function](#Lambda-function-decoding)
+	- [AWS Glue](#AWS-Glue)
+	- [AWS Athena](#AWS-Athena)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
 
