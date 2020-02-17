@@ -61,7 +61,8 @@ A Kinesis Data Firehose Delivery Stream is set up to delivery the streaming data
 * **Source Backup:**       backup S3 bucket
 
 ### Lambda function (decoding)
-Since the data items are encoded from String to bytes in Python script, the payload received in AWS Kinesis need to be decoded to JSON format. The process is done in AWS Lambda through Javascript https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/payload_decoding.js
+Since the data items are encoded from String to bytes in Python script, the payload received in AWS Kinesis need to be decoded to JSON format. The process is done in AWS Lambda through Javascript Lambda Function code:
+https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/payload_decoding.js
 
 
 
