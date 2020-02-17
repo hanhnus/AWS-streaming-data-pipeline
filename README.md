@@ -43,7 +43,7 @@ The streaming data pipeline in this repo is to simulate Atomic app sending cards
 ## Pipeline
 
 ### Send data to AWS Kinesis using Python
-<img src="https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/image/AWS_Kinesis_Data_Stream.png"  width="100"/>
+<img src="https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/image/AWS_Kinesis_Data_Stream.png"  width="300"/>
 
 A [Python script](https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/stream_data_to_Kinesis.py) is built to 
 1. Read raw data from CSV file into DataFrame
