@@ -54,6 +54,26 @@ A [Python script](https://github.com/hanhnus/streaming_data_pipeline_AWS_deploym
 ### Delivery data from Data Stream to S3 bucket through Delivery Stream (with Lambda data transformation)
 <img src="https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/image/AWS_Kinesis_Data_Firehose_Deliverty_Stream.png"  width="600"/>
 
+A Kinesis Data Firehose Delivery Stream is set up to delivery the streaming data:
+* Source: Kinesis Data Stream
+* Data Transformation: defined Lambda function
+* Destination: S3 bucket
+* Source Backup: backup S3 bucket
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Usage
 
