@@ -56,16 +56,12 @@ A [Python script](https://github.com/hanhnus/streaming_data_pipeline_AWS_deploym
 
 A Kinesis Data Firehose Delivery Stream is set up to delivery the streaming data:
 * **Source:**              Kinesis Data Stream
-* **Data Transformation:** defined Lambda function
+* **Data Transformation:** defined [Lambda function](https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/payload_decoding.js)
 * **Destination:**         S3 bucket
 * **Source Backup:**       backup S3 bucket
 
-|                     |                         |
-| ---                 | ---                     |
-| Source              | Kinesis Data Stream     |
-| Data Transformation | defined Lambda function |
-| Destination         | S3 bucket               |
-| Source Backup       | backup S3 bucket        |
+### Lambda function (decoding)
+Since the data items are encoded from String to bytes in Python script, the payload received in AWS Kinesis need to be decoded to JSON format. The process is done in AWS Lambda through Javascript https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/payload_decoding.js
 
 
 
