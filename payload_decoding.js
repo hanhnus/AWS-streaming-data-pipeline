@@ -39,16 +39,16 @@ exports.handler = (event, context, callback) => {
             success++;
             return {
                 recordId: record.recordId,
-                result: 'Ok',
-                data: (Buffer.from(JSON.stringify(result))).toString('base64'),
+                result:   'Ok',
+                data:     (Buffer.from(JSON.stringify(result))).toString('base64'),
             };
         } else {
             /* Failed event, notify the error and leave the record intact */
             failure++;
             return {
                 recordId: record.recordId,
-                result: 'ProcessingFailed',
-                data: record.data,
+                result:   'ProcessingFailed',
+                data:     record.data,
             };
         }
     });
