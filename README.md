@@ -57,6 +57,8 @@ An AWS Glue ETL job is set up to keep the schema of the source data and create a
 
 <img src="https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/image/AWS_Glue.png" width="400"/>
 
+AWS Glue ETL script: https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/AWS_Glue_ETL_script.py
+
 ### AWS Athena
 
 
