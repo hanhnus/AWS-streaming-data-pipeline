@@ -55,7 +55,7 @@ An AWS Glue ETL job is set up to keep the schema of the source data and create a
 * **Data Target:**  Parquet format data in S3 bucket
 * **Schema:**       Keep unchanged
 
-<img src="https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/image/AWS_Glue.png" width="500"/>
+<img src="https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/image/AWS_Glue.png" width="400"/>
 
 ### AWS Athena
 
