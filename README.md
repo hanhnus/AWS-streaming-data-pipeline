@@ -26,7 +26,7 @@
 
 ## Background
 
-The streaming data pipeline in this repo is to simulate Atomic app sending cards/events data to AWS API. A sample data set ([Crime Records in Sacramento](http://samplecsvs.s3.amazonaws.com/SacramentocrimeJanuary2006.csv)) in CSV format is selected in this demo due to its variety of data types in different columns, including datetime, string, int, double and struct.
+The streaming data pipeline in this repo is to simulate Atomic app sending cards/events data to Kinesis Data Stream by making API call. A sample data set ([Crime Records in Sacramento](http://samplecsvs.s3.amazonaws.com/SacramentocrimeJanuary2006.csv)) in CSV format is selected in this demo due to its variety of data types in different columns, including datetime, string, int, double and struct.
 
 ## Feature
 
