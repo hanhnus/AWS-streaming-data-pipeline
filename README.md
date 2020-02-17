@@ -11,12 +11,11 @@
 
 ## Table of Contents
 
-- [Background](#background)
-- [Feature](#feature)
-- [Installation (Docker Deployment)](#installation)
-- [Usage](#usage)
-	- [UI in Browser](#Access-the-Sentiment-Analysis-UI-in-Browser)
-	- [cURL Request in Terminal](#Send-cURL-Request-in-Terminal)
+- [Background](#Background)
+- [Pipeline](#Pipeline)
+	- [Send data to AWS Kinesis Data Stream](#Send-data-to-AWS-Kinesis-using-Python)
+	- [AWS Kinesis Delivery Stream](#Delivery-data-from-Data-Stream-to-S3-bucket-through-Delivery-Stream-(with-Lambda-data-transformation))
+	- [Lambda function](#Lambda-function-(decoding))
 - [Testing](#API-testing)
 	- [Unit Testing (pytest)](#Unit-Testing-pytest)
 	- [API Testing (Swagger UI)](#API-Testing-Swagger-UI)
