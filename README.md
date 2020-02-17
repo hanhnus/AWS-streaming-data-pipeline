@@ -15,11 +15,7 @@
 - [Pipeline](#Pipeline)
 	- [Send data to AWS Kinesis Data Stream](#Send-data-to-AWS-Kinesis-using-Python)
 	- [AWS Kinesis Delivery Stream](#Delivery-data-from-Data-Stream-to-S3-bucket-through-Delivery-Stream-with-Lambda-data-transformation)
-	- [Lambda function](#Lambda-function-decode)
-- [Testing](#API-testing)
-	- [Unit Testing (pytest)](#Unit-Testing-pytest)
-	- [API Testing (Swagger UI)](#API-Testing-Swagger-UI)
-- [Running in AWS](#Running-in-AWS)
+	- [Lambda function](#Lambda-function-decoding)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
 
