@@ -51,8 +51,7 @@ A [Python script](https://github.com/hanhnus/streaming_data_pipeline_AWS_deploym
 3. Encapsulate the encoded bytes together with the corresponding partition keys in a JSON list (after reading certain amount of data items, eg. every 50 rows)
 4. Send the JSON lists to Kinesis Data Stream by making API call periodically
 
-### Delivery data from Data Stream to S3 bucket 
-###    through Delivery Stream with Lambda data transformation
+### Delivery data from Data Stream to S3 bucket through Delivery Stream (with Lambda data transformation)
 
 
 
