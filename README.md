@@ -43,7 +43,7 @@ The streaming data pipeline building in this repo is to simulate Atomic app send
 
 ### Send data to AWS Kinesis using Python
 
-A Python script (链接) is built to 
+A [Python script](https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/stream_data_to_Kinesis.py) is built to 
 1. Read raw data from CSV file into DataFrame
 2. Encode the data items from String to bytes
 3. Encapsulate the encoded bytes together with the corresponding partition keys in a JSON list (after reading certain amount of data items, eg. every 50 rows)
