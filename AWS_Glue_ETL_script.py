@@ -15,16 +15,16 @@ job         = Job(glueContext)
 job.init(args['JOB_NAME'], args)
 
 ## @type: DataSource
-## @args: [database = "crime-database", table_name = "09", transformation_ctx = "datasource0"]
+## @args: [database = "crime-database", table_name = "04", transformation_ctx = "datasource0"]
 ## @return: datasource0
 ## @inputs: []
-datasource0 = glueContext.create_dynamic_frame.from_catalog(database = "crime-database", table_name = "09", transformation_ctx = "datasource0")
+datasource0 = glueContext.create_dynamic_frame.from_catalog(database = "crime-database", table_name = "04", transformation_ctx = "datasource0")
 
 ## @type: ApplyMapping
-## @args: [mapping = [("crime_time", "string", "crime_time", "string"), ("address", "string", "address", "string"), ("district", "int", "district", "int"), ("beat", "string", "beat", "string"), ("grid", "int", "grid", "int"), ("description", "string", "description", "string"), ("crime_id", "int", "crime_id", "int"), ("latitude", "double", "latitude", "double"), ("longitude", "double", "longitude", "double"), ("load_time", "string", "load_time", "string"), ("location", "struct", "location", "struct")], transformation_ctx = "applymapping1"]
+## @args: [mapping = [("crime_time", "string", "crime_time", "string"), ("address", "string", "address", "string"), ("district", "int", "district", "int"), ("beat", "string", "beat", "string"), ("grid", "int", "grid", "int"), ("description", "string", "description", "string"), ("crime_id", "int", "crime_id", "int"), ("latitude", "double", "latitude", "double"), ("longitude", "double", "longitude", "double"), ("location", "struct", "location", "struct"), ("crime_year", "string", "crime_year", "string"), ("crime_month", "string", "crime_month", "string"), ("crime_day", "string", "crime_day", "string")], transformation_ctx = "applymapping1"]
 ## @return: applymapping1
 ## @inputs: [frame = datasource0]
-applymapping1 = ApplyMapping.apply(frame = datasource0, mappings = [("crime_time", "string", "crime_time", "string"), ("address", "string", "address", "string"), ("district", "int", "district", "int"), ("beat", "string", "beat", "string"), ("grid", "int", "grid", "int"), ("description", "string", "description", "string"), ("crime_id", "int", "crime_id", "int"), ("latitude", "double", "latitude", "double"), ("longitude", "double", "longitude", "double"), ("load_time", "string", "load_time", "string"), ("location", "struct", "location", "struct")], transformation_ctx = "applymapping1")
+applymapping1 = ApplyMapping.apply(frame = datasource0, mappings = [("crime_time", "string", "crime_time", "string"), ("address", "string", "address", "string"), ("district", "int", "district", "int"), ("beat", "string", "beat", "string"), ("grid", "int", "grid", "int"), ("description", "string", "description", "string"), ("crime_id", "int", "crime_id", "int"), ("latitude", "double", "latitude", "double"), ("longitude", "double", "longitude", "double"), ("location", "struct", "location", "struct"), ("crime_year", "string", "crime_year", "string"), ("crime_month", "string", "crime_month", "string"), ("crime_day", "string", "crime_day", "string")], transformation_ctx = "applymapping1")
 
 ## @type: ResolveChoice
 ## @args: [choice = "make_struct", transformation_ctx = "resolvechoice2"]
@@ -39,9 +39,13 @@ resolvechoice2 = ResolveChoice.apply(frame = applymapping1, choice = "make_struc
 dropnullfields3 = DropNullFields.apply(frame = resolvechoice2, transformation_ctx = "dropnullfields3")
 
 ## @type: DataSink
-## @args: [connection_type = "s3", connection_options = {"path": "s3://destination-delivery-stream-python/delivery-stream-32020/02/15/09/parquet"}, format = "parquet", transformation_ctx = "datasink4"]
+## @args: [connection_type = "s3", connection_options = {"path": "s3://atomic-streaming-data-parquet"}, format = "parquet", transformation_ctx = "datasink4"]
 ## @return: datasink4
 ## @inputs: [frame = dropnullfields3]
-datasink4 = glueContext.write_dynamic_frame.from_options(frame = dropnullfields3, connection_type = "s3", connection_options = {"path": "s3://destination-delivery-stream-python/delivery-stream-32020/02/15/09/parquet"}, format = "parquet", transformation_ctx = "datasink4")
-
+datasink4 = glueContext.write_dynamic_frame.from_options(frame              = dropnullfields3, 
+                                                         connection_type    = "s3", 
+                                                         connection_options = {"path":          "s3://crime-streaming-data-parquet", 
+                                                                               "partitionKeys": ["crime_year", "crime_month", "crime_day"]}, 
+                                                         format             = "parquet", 
+                                                         transformation_ctx = "datasink4")
 job.commit()
