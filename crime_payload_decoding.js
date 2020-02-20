@@ -21,7 +21,7 @@ exports.handler = (event, context, callback) => {
             const result = {
                 
                 // build all fields from array
-                crime_time:  match[0],
+                crime_time:  match[0].substring(1, 20),
                 address:     match[1],
                 district:    parseInt(match[2]),
                 beat:        match[3],
@@ -30,28 +30,33 @@ exports.handler = (event, context, callback) => {
                 crime_id:    parseInt(match[6]),
                 latitude:    parseFloat(match[7]),
                 longitude:   parseFloat(match[8]),
-                load_time:  match[9],
                 location:{
                      lat: parseFloat(match[7]),
                      lon: parseFloat(match[8])
-                }
+                },
+                crime_year:  match[0].substring(1,  5),
+                crime_month: match[0].substring(6,  8),
+                crime_day:   match[0].substring(9, 11)
             };
             success++;
+            
             return {
                 recordId: record.recordId,
-                result:   'Ok',
-                data:     (Buffer.from(JSON.stringify(result))).toString('base64'),
+                result: 'Ok',
+                data: (Buffer.from(JSON.stringify(result))).toString('base64'),
             };
         } else {
             /* Failed event, notify the error and leave the record intact */
             failure++;
+            
             return {
                 recordId: record.recordId,
-                result:   'ProcessingFailed',
-                data:     record.data,
+                result: 'ProcessingFailed',
+                data: record.data,
             };
         }
     });
+    
     console.log(`Processing completed.  Successful records ${success}, Failed records ${failure}.`);
     callback(null, { records: output });
 };
