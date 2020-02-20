@@ -65,7 +65,7 @@ AWS Glue ETL script: https://github.com/hanhnus/streaming_data_pipeline_AWS_depl
 
 Query the top 10 records in the Parquet table generated in the previous step:
 
-<img src="https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/image/AWS_Athena.png"/>
+<img src="https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/image/AWS_Athena_query_result.png"/>
 
 ## Maintainers
 
