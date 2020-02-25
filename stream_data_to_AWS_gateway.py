@@ -1,8 +1,8 @@
 import requests
 import json
 
-from utilities.csv_reader   import csv_reader
-from utilities.atomic_event import list_sample_atomic_event
+from utilities.csv_reader                   import csv_reader
+from utilities.atomic_event_array_generator import list_sample_atomic_event
 
 def send_df_to_api_gateway(df, api_gateway_endpoint):
 
