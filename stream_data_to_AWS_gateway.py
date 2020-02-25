@@ -67,13 +67,13 @@ def main():
     api_gateway_endpoint = "https://qfdspt15lk.execute-api.ap-southeast-2.amazonaws.com/test/streams/kinesis-data-stream-atomic/record"
 
     # read data
-    df = csv_reader('crime.csv')
+    #df = csv_reader('crime.csv')
 
     # send data to API gateway
-    send_df_to_api_gateway(df, api_gateway_endpoint)
+    #send_df_to_api_gateway(df, api_gateway_endpoint)
 
     # send atomic event to API gateway
-    #send_atomic_event_to_api_gateway(list_sample_atomic_event, api_gateway_endpoint)
+    send_atomic_event_to_api_gateway(list_sample_atomic_event, api_gateway_endpoint)
 
 
 if __name__ == "__main__":
