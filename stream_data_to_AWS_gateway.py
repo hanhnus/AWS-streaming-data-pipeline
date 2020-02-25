@@ -72,7 +72,7 @@ def main():
     # send data to API gateway
     #send_df_to_api_gateway(df, api_gateway_endpoint)
 
-    # send auto-generated atomic event JSON string to API gateway
+    # send auto-generated Atomic events JSON string to API gateway
     send_atomic_event_to_api_gateway(list_sample_atomic_event, api_gateway_endpoint)
 
 
