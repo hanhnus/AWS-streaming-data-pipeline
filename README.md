@@ -50,7 +50,7 @@ Since the data items are encoded from String to bytes in Python script, the payl
 https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/payload_decoding.js
 
 ### AWS Glue
-<img src="https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/image/AWS_Glue_Athena.png" width="280"/>
+<img src="https://github.com/hanhnus/streaming_data_pipeline_AWS_deployment/blob/master/image/AWS_S3_Glue_Athena.png" width="280"/>
 
 An AWS Glue ETL job is set up to keep the schema of the source data and create a new dataset in Parquet format:
 * **Data Source:**  JSON format data in S3 bucket
